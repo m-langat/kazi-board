@@ -12,9 +12,11 @@ class ListingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Listing $listing)
+    public function index()
     {
-        return $listing = json_encode($listing.all());
+        $listings = Listing::all();
+
+        return view("Listings.index", compact("listings"));
     }
 
     /**
@@ -24,7 +26,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+        return view("listings.new");
     }
 
     /**
