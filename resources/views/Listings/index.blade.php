@@ -4,6 +4,6 @@
 <h1>Listings</h1>
 
 @foreach ($listings as $listing)
-    This is a listing
+    <p>{{$listing->listing_title}}</p>
 @endforeach    
 @endsection
