@@ -37,7 +37,14 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newListing = new Listing();
+        $newListing->listing_title = $request['listing_title'];
+        $newListing->listing_description = $request['listing_description'];
+        $newListing->listing_expiry_date = $request['listing_expiry_date'];
+        $newListing->listing_date = $request['listing_date'];
+        $newListing->save();
+
+        return redirect("/listings");
     }
 
     /**
