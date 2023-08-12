@@ -53,9 +53,10 @@ class ListingController extends Controller
      * @param  \App\Models\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function show(Listing $listing)
+    public function show($id)
     {
-        //
+        $listing = Listing::find($id);
+        return view('Listings.show', compact('listing'));
     }
 
     /**
