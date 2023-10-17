@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/listings', [ListingController::class, 'index']);
 Route::get('/listings/new', [ListingController::class, 'create']);
 Route::post('/listings', [ListingController::class, 'store']);
+Route::get('/listings/{id}', [ListingController::class, 'show']);
