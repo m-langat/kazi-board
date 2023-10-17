@@ -5,7 +5,13 @@
 
 <a href="/listings/new">Add a new job</a>
 
-@foreach ($listings as $listing)
-    <p>{{$listing->listing_title}}</p>
-@endforeach    
+<div class="listings">
+
+    @foreach ($listings as $listing)
+    <div class="listing">
+        <a href="listings/{{$listing->id}}">{{$listing->listing_title}}</a>
+    </div>
+        
+    @endforeach    
+</div>
 @endsection
