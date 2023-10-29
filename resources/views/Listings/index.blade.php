@@ -1,4 +1,4 @@
-@extends('index')
+@extends('layout')
 @section('content')
 
 <h1>Listings</h1>
