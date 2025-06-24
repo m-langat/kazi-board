@@ -12,11 +12,11 @@
             @csrf
             <div class="mb-3">
                 <label for="listing_title" class="form-label">Listing Title</label>
-                <input class="form-control" type="text" name="listing_title">
+                <input class="form-control" type="text" name="listing_title" id="listing_title" required>
             </div>
             <div class="mb-3">
                 <label for="listing_description" class="form-label">Listing Description</label>
-                <textarea hidden ="form-control" name="listing_description" id="listing_description" cols="30" rows="10"></textarea>
+                <textarea hidden class="form-control" name="listing_description" id="listing_description" cols="30" rows="10"></textarea>
                 <div id="editor-container">
 
                 </div>

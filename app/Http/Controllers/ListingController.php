@@ -65,9 +65,10 @@ class ListingController extends Controller
      * @param  \App\Models\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function edit(Listing $listing)
+    public function edit($id)
     {
-        //
+        $listing = Listing::findOrFail($id);
+        return view("Listings.edit", compact("listing"));
     }
 
     /**
@@ -77,9 +78,17 @@ class ListingController extends Controller
      * @param  \App\Models\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Listing $listing)
+    public function update(Request $request, $id)
     {
-        //
+
+        $listing = Listing::findOrFail($id);
+        $listing->listing_title = $request['listing_title'];
+        $listing->listing_description = $request['listing_description'];
+        $listing->listing_expiry_date = $request['listing_expiry_date'];
+        $listing->listing_date = $request['listing_date'];
+        $listing->save();
+
+        return redirect("/listings");
     }
 
     /**
@@ -88,7 +97,7 @@ class ListingController extends Controller
      * @param  \App\Models\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Listing $listing)
+    public function destroy()
     {
         //
     }

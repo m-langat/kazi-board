@@ -22,7 +22,7 @@
 
     @foreach ($listings as $listing)
     <div class="listing mb-4">
-        <a class="link-underline link-underline-opacity-0" href="listings/{{$listing->id}}">
+        <a class="link-underline link-underline-opacity-0" href="listings/{{$listing->id}}/show">
             <div class="card">
                 <div class="card-body">
                     {{$listing->listing_title}}
