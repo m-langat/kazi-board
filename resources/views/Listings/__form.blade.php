@@ -5,7 +5,7 @@
 
     <div class="mb-3">
         <label for="listing_title" class="form-label">Title</label>
-        <input type="text" name="listing_title" id="listing_title" class="form-control" value="{{ old('listing_title', $listing->listing_title) }}" required>
+        <input type="text" name="listing_title" id="listing_title" class="form-control" value="{{isset($listing)? old('listing_title', $listing->listing_title) : ''}}" required>
         @error('listing_title')
             <div class="text-danger">{{ $message }}</div>
         @enderror
@@ -13,7 +13,7 @@
 
     <div class="mb-3">
         <label for="listing_description" class="form-label">Description</label>
-        <textarea hidden name="listing_description" id="listing_description" class="form-control" required>{{ old('listing_description', $listing->listing_description ) }}</textarea>
+        <textarea hidden name="listing_description" id="listing_description" class="form-control" required>{{ isset($listing)? old('listing_description', $listing->listing_description ) : ''}}</textarea>
         <div id="editor-container">
 
         </div>
@@ -23,14 +23,14 @@
     </div>
     <div class="mb-3">
         <label for="listing_expiry_date" class="form-label">Expiry Date</label>
-        <input type="date" name="listing_expiry_date" id="listing_expiry_date" class="form-control" value="{{ old('listing_expiry_date', $listing->listing_expiry_date) }}" required>
+        <input type="date" name="listing_expiry_date" id="listing_expiry_date" class="form-control" value="{{ isset($listing)? old('listing_expiry_date', $listing->listing_expiry_date) : '' }}" required>
         @error('listing_expiry_date')
             <div class="text-danger">{{ $message }}</div>
         @enderror
     </div>
     <div class="mb-3">
         <label for="listing_date" class="form-label">Listing Date</label>
-        <input type="date" name="listing_date" id="listing_date" class="form-control" value="{{ old('listing_date', $listing->listing_date) }}" required>
+        <input type="date" name="listing_date" id="listing_date" class="form-control" value="{{ isset($listing)?old('listing_date', $listing->listing_date): '' }}" required>
         @error('listing_date')
             <div class="text-danger">{{ $message }}</div>
         @enderror
